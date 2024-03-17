@@ -3,6 +3,10 @@
   src="assets/images/skyscraper_both.png"
   alt="Skyscrapers background"
 />
-<div class="container">
-  <ng-content></ng-content>
+<div class="container-top">
+  <ng-content class="container-top" select="container-top"></ng-content>
+</div>
+
+<div class="container-center">
+  <ng-content select="container-center"></ng-content>
 </div>

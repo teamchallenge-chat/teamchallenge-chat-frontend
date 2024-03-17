@@ -1,9 +1,11 @@
 @import './styles/normalize.scss';
+@import './styles/components/link.scss';
 @import 'variables';
 
 * {
   font-family: $mainFontFamily;
   font-size: 14px;
+  transition: all 0.3s ease-in-out;
 }
 
 body {
