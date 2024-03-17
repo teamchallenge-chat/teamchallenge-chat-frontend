@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LOGIN_PAGE_ROUTE, REGISTRATION_PAGE_ROUTE } from '@core/constants/routes';
+import { AppRoutes } from '@core/enums/routes.enum';
 
 @Component({
   selector: 'app-start-page',
@@ -7,6 +7,6 @@ import { LOGIN_PAGE_ROUTE, REGISTRATION_PAGE_ROUTE } from '@core/constants/route
   styleUrls: ['./start-page.component.scss'],
 })
 export class StartPageComponent {
-  protected readonly REGISTRATION_PAGE_ROUTE = REGISTRATION_PAGE_ROUTE;
-  protected readonly LOGIN_PAGE_ROUTE = LOGIN_PAGE_ROUTE;
+  protected readonly REGISTRATION_PAGE_ROUTE = AppRoutes.REGISTRATION_PAGE_ROUTE;
+  protected readonly LOGIN_PAGE_ROUTE = AppRoutes.LOGIN_PAGE_ROUTE;
 }

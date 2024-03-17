@@ -15,3 +15,12 @@ img {
     margin-bottom: 20px;
   }
 }
+
+.container-top {
+  align-items: center;
+  top: 42%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}

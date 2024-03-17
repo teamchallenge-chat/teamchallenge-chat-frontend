@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LOGIN_PAGE_ROUTE, REGISTRATION_PAGE_ROUTE } from '@core/constants/routes';
-import { RegisterPageComponent } from './components/register-page/register-page.component';
-import { LoginPageComponent } from './components/login-page/login-page.component';
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { StartPageComponent } from './pages/start-page/start-page.component';
+import { AppRoutes } from '@core/enums/routes.enum';
 
 const routes: Routes = [
-  { path: REGISTRATION_PAGE_ROUTE, component: RegisterPageComponent },
-  { path: LOGIN_PAGE_ROUTE, component: LoginPageComponent },
+  { path: '', component: StartPageComponent },
+  { path: AppRoutes.REGISTRATION_PAGE_ROUTE, component: RegisterPageComponent },
+  { path: AppRoutes.LOGIN_PAGE_ROUTE, component: LoginPageComponent },
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 @import './styles/normalize.scss';
 @import './styles/components/link.scss';
+@import './styles/layouts/containers.scss';
 @import 'variables';
 
 * {
@@ -34,4 +35,12 @@ button {
 
 a {
   font-size: 16px;
+}
+
+.logo {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 95px;
+  height: 38px;
 }
