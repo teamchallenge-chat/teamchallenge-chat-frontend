@@ -38,6 +38,8 @@ export class FormControlComponent implements InputType, OnInit {
   }
 
   resetField(): void {
+    console.log(this.control?.value);
+
     if (this.control) {
       this.control.setValue('');
     }
@@ -61,6 +63,13 @@ export class FormControlComponent implements InputType, OnInit {
             break;
           case 'email':
             errorMessages.push(`Поле має бути в форматі mail@mail.com`);
+            break;
+          case 'mismatch':
+            if (this.name === 'password') {
+              errorMessages.push(`Паролі не співпадають.`);
+            } else {
+              errorMessages.push(`Поля не співпадають.`);
+            }
             break;
           default:
             if (key === 'pattern') {

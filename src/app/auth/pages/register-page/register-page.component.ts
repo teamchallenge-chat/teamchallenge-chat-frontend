@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AppRoutes } from '@core/enums/routes.enum';
+import { matchValidator } from '@shared/validators/match.validator';
 
 @Component({
   selector: 'app-register-page',
@@ -12,18 +13,23 @@ export class RegisterPageComponent {
 
   protected readonly LOGIN_PAGE_ROUTE = `/${AppRoutes.LOGIN_PAGE_ROUTE}`;
 
-  registerForm = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: [
-      '',
-      [
-        Validators.required,
-        Validators.minLength(8),
-        Validators.pattern(
-          /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/
-        ),
+  registerForm = this.fb.group(
+    {
+      email: ['', [Validators.required, Validators.email]],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.pattern(
+            /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/
+          ),
+        ],
       ],
-    ],
-    confirmPassword: ['', [Validators.required]],
-  });
+      confirmPassword: ['', [Validators.required]],
+    },
+    {
+      validators: matchValidator('password', 'confirmPassword'),
+    }
+  );
 }
