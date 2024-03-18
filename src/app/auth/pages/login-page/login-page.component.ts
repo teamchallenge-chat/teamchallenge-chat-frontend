@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { AppRoutes } from '@core/enums/routes.enum';
 
 @Component({
@@ -7,5 +8,21 @@ import { AppRoutes } from '@core/enums/routes.enum';
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent {
+  private fb = inject(FormBuilder);
+
   protected readonly REGISTRATION_PAGE_ROUTE = `/${AppRoutes.REGISTRATION_PAGE_ROUTE}`;
+
+  loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(
+          /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/
+        ),
+      ],
+    ],
+  });
 }

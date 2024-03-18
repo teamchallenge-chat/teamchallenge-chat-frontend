@@ -1,5 +1,7 @@
 @import './styles/normalize.scss';
 @import './styles/components/link.scss';
+@import './styles/components/blocks.scss';
+@import './styles/components/auth.scss';
 @import './styles/layouts/containers.scss';
 @import 'variables';
 
@@ -31,6 +33,13 @@ h1 {
 h2,
 button {
   font-size: 18px;
+}
+
+button {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a {

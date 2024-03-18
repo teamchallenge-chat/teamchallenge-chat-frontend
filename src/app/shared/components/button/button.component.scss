@@ -1,7 +1,25 @@
+@import 'variables';
+:host {
+  width: 100%;
+}
+
 .default-btn {
   border-radius: 40px;
   padding: 16px 0px;
   height: 46px;
   font-weight: 700;
   text-align: center;
+  width: 100%;
+  background-color: $accentColorDark;
+  color: $secondaryFontAndBlocksColor;
+
+  &:disabled {
+    filter: blur(2px);
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: $accentColor;
+    color: $primaryFontColor;
+  }
 }

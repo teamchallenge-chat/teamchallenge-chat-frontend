@@ -1,0 +1,16 @@
+@import 'variables';
+
+.default-content-block {
+  border-radius: 40px;
+  margin: 0 auto;
+  padding: 48px;
+  max-width: 440px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: $boxShadowDark;
+  background-color: $primaryLightColor;
+
+  h1 {
+    margin-bottom: 32px;
+  }
+}
