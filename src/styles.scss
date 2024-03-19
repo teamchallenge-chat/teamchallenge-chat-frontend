@@ -1,1 +1,56 @@
 @import './styles/normalize.scss';
+@import './styles/components/link.scss';
+@import './styles/components/blocks.scss';
+@import './styles/components/auth.scss';
+@import './styles/layouts/containers.scss';
+@import 'variables';
+
+* {
+  font-family: $mainFontFamily;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $primaryDarkColor;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2,
+button {
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+a {
+  font-size: 16px;
+}
+
+.logo {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 95px;
+  height: 38px;
+}

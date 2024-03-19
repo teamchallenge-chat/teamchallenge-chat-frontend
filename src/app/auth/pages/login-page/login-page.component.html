@@ -1,0 +1,29 @@
+<div class="container-center">
+  <div class="default-content-block">
+    <div class="auth__form">
+      <h1>Увійти</h1>
+      <form [formGroup]="loginForm">
+        <app-form-control
+          label="Пошта"
+          name="email"
+          [control]="loginForm.get('email')"
+          [isRequired]="true"
+          type="email"
+        ></app-form-control>
+        <app-form-control
+          label="Пароль"
+          name="password"
+          [control]="loginForm.get('password')"
+          [isRequired]="true"
+          type="password"
+          [iconsUrl]="['assets/icons/eye-closed_icon.svg', 'assets/icons/eye-open_icon.svg']"
+        ></app-form-control>
+        <app-button type="submit" title="submit" [disabled]="loginForm.invalid"> Вхід </app-button>
+      </form>
+      <div>
+        Не має акаунту?
+        <a class="auth-nav" [routerLink]="[REGISTRATION_PAGE_ROUTE]">Зареєструватись</a>
+      </div>
+    </div>
+  </div>
+</div>
