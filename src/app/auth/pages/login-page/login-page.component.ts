@@ -11,6 +11,7 @@ export class LoginPageComponent {
   private fb = inject(FormBuilder);
 
   protected readonly REGISTRATION_PAGE_ROUTE = `/${AppRoutes.REGISTRATION_PAGE_ROUTE}`;
+  protected readonly FORGOT_PASSWORD_PAGE_ROUTE = `/${AppRoutes.FORGOT_PASSWORD_PAGE_ROUTE}`;
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],

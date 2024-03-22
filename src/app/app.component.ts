@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   private readonly backgroundAndLogoRoutes = [
     AppRoutes.LOGIN_PAGE_ROUTE,
     AppRoutes.REGISTRATION_PAGE_ROUTE,
+    AppRoutes.FORGOT_PASSWORD_PAGE_ROUTE,
   ];
 
   ngOnInit(): void {
