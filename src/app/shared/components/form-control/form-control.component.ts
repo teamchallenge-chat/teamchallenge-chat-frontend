@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
-import { InputType } from './input.interface';
 import { Observable, map } from 'rxjs';
+import { InputType } from '@shared/models/input.interface';
+import { LengthErrorMessage, PatternErrorMessage } from '@shared/models/validator.interface';
+import { errorMessages } from '@shared/validators/validator-messages';
 
 @Component({
   selector: 'app-form-control',
@@ -38,48 +41,20 @@ export class FormControlComponent implements InputType, OnInit {
   }
 
   resetField(): void {
-    console.log(this.control?.value);
-
-    if (this.control) {
-      this.control.setValue('');
-    }
+    this.control?.setValue('');
   }
-  get errors(): string[] {
-    const { control } = this;
-    const errorMessages: string[] = [];
-    if (control?.errors) {
-      Object.entries(control.errors).forEach(error => {
-        const [key, message] = error;
 
-        switch (key) {
-          case 'required':
-            errorMessages.push(`Це поле є обов’язковим.`);
-            break;
-          case 'minlength':
-            errorMessages.push(`Мінімальна довжина поля ${message.requiredLength} символів.`);
-            break;
-          case 'maxlength':
-            errorMessages.push(`Максимальна довжина поля ${message.requiredLength} символів`);
-            break;
-          case 'email':
-            errorMessages.push(`Поле має бути в форматі mail@mail.com`);
-            break;
-          case 'mismatch':
-            if (this.name === 'password') {
-              errorMessages.push(`Паролі не співпадають.`);
-            } else {
-              errorMessages.push(`Поля не співпадають.`);
-            }
-            break;
-          default:
-            if (key === 'pattern') {
-              if (this.name === 'password') {
-                errorMessages.push(
-                  `Пароль має містити одну велику, одну маленьку букву, цифру та спеціальний символ.`
-                );
-              }
-            }
-        }
+  getErrorMessage(key: string, value: LengthErrorMessage | PatternErrorMessage): string {
+    const errorMessageOrFunction = errorMessages(this.name)[key];
+    return errorMessageOrFunction(value);
+  }
+
+  get errors(): string[] {
+    const errorMessages: string[] = [];
+    if (this.control?.errors) {
+      Object.entries(this.control.errors).forEach(([key, value]) => {
+        const errorMessage = this.getErrorMessage(key, value);
+        errorMessages.push(errorMessage);
       });
     }
     return errorMessages;

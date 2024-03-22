@@ -1,4 +1,4 @@
-<div [class]="css" [class.required]="isRequired">
+<div [class]="css">
   <label [for]="name" *ngIf="label">{{ label }}</label>
   <div class="input-container" [ngClass]="{ filled: isInputFilled$ | async, invalid: isInvalid() }">
     <input
