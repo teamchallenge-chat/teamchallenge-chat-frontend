@@ -13,6 +13,10 @@ img {
     background-color: $secondaryFontAndBlocksColor;
     color: $primaryFontColor;
     margin-bottom: 20px;
+
+    &:last-of-type {
+      border: 1px solid $primaryFontColor;
+    }
   }
 }
 

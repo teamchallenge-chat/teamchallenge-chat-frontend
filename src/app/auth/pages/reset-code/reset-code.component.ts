@@ -15,4 +15,8 @@ export class ResetCodeComponent {
   protected resetCodeForm = this.fb.group({
     code: ['', [Validators.required]],
   });
+
+  onSubmit(): void {
+    console.log('wow ');
+  }
 }

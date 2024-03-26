@@ -2,7 +2,7 @@
   <div class="default-content-block">
     <div class="auth__form">
       <h1>Введіть в поле код, що був відправленний на вашу електронну адресу</h1>
-      <form [formGroup]="resetCodeForm">
+      <form [formGroup]="resetCodeForm" (ngSubmit)="onSubmit()">
         <app-form-control
           label="Код"
           name="code"

@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AppRoutes } from '@core/enums/routes.enum';
-
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',

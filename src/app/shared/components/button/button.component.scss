@@ -23,3 +23,12 @@
     color: $primaryFontColor;
   }
 }
+
+.close__btn {
+  background-color: transparent;
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+}
