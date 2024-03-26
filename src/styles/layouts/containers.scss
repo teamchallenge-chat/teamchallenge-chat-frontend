@@ -1,0 +1,16 @@
+.container-top,
+.container-center {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+
+.container-top {
+  top: 42%;
+  left: 50%;
+}
+
+.container-center {
+  top: 50%;
+  left: 50%;
+}
