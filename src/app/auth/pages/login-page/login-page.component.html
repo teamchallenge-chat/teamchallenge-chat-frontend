@@ -18,6 +18,9 @@
           type="password"
           [iconsUrl]="['assets/icons/eye-closed_icon.svg', 'assets/icons/eye-open_icon.svg']"
         ></app-form-control>
+        <div class="forgot-password">
+          <a class="auth-nav" [routerLink]="[FORGOT_PASSWORD_PAGE_ROUTE]"> Забули пароль</a>
+        </div>
         <app-button type="submit" [disabled]="loginForm.invalid"> Вхід </app-button>
       </form>
       <div>

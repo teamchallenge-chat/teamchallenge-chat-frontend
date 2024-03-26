@@ -1,19 +1,18 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AppRoutes } from '@core/enums/routes.enum';
+
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss'],
+  selector: 'app-new-password',
+  templateUrl: './new-password.component.html',
+  styleUrls: ['./new-password.component.scss'],
 })
-export class LoginPageComponent {
+export class NewPasswordComponent {
   private fb = inject(FormBuilder);
 
-  protected readonly REGISTRATION_PAGE_ROUTE = `/${AppRoutes.REGISTRATION_PAGE_ROUTE}`;
-  protected readonly FORGOT_PASSWORD_PAGE_ROUTE = `/${AppRoutes.FORGOT_PASSWORD_PAGE_ROUTE}`;
+  protected readonly NEW_PASSWORD_PAGE_ROUTE = `/${AppRoutes.NEW_PASSWORD_PAGE_ROUTE}`;
 
-  loginForm = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
+  newPasswordForm = this.fb.group({
     password: [
       '',
       [
@@ -24,5 +23,6 @@ export class LoginPageComponent {
         ),
       ],
     ],
+    confirmPassword: ['', [Validators.required]],
   });
 }
