@@ -1,0 +1,43 @@
+@import 'variables';
+
+.default-content-block {
+  border-radius: 40px;
+  margin: 0 auto;
+  padding: 48px;
+  max-width: 440px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: $boxShadowDark;
+  background-color: $primaryLightColor;
+
+  h1 {
+    margin-bottom: 32px;
+  }
+}
+
+.mat-mdc-dialog-container .mdc-dialog__container {
+  position: relative !important;
+}
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 40px !important;
+  margin: 0 auto;
+  max-width: 440px !important;
+  min-width: 440px !important;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: $boxShadowDark !important;
+  background-color: $primaryLightColor !important;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(217, 217, 217, 0.5) !important;
+}
+
+.cdk-overlay-pane {
+  pointer-events: none !important;
+}

@@ -1,0 +1,16 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <ng-content select="[modal-header]"></ng-content>
+  </div>
+  <div class="modal-body">
+    <ng-content select="[modal-body]"></ng-content>
+  </div>
+  <div class="modal-bottom" *ngIf="data?.showSubmitBtn">
+    <app-button (buttonClick)="handleSubmit()"> button </app-button>
+  </div>
+</div>
+<div class="modal-close" *ngIf="data?.showCloseBtn">
+  <app-button customClass="close__btn" (buttonClick)="closeDialog()">
+    <img src="assets/icons/close_icon.svg" alt="" />
+  </app-button>
+</div>

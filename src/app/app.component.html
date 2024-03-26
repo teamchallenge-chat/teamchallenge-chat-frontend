@@ -1,0 +1,13 @@
+<ng-container *ngIf="showBackground">
+  <img
+    class="skyscraper-background"
+    src="assets/images/skyscraper_both.png"
+    alt="Skyscrapers background"
+  />
+</ng-container>
+<ng-container *ngIf="showLogo">
+  <a [routerLink]="['/']">
+    <img class="logo" src="assets/icons/logo.svg" alt="Logo" />
+  </a>
+</ng-container>
+<router-outlet></router-outlet>
