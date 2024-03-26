@@ -19,6 +19,9 @@ export class AppComponent implements OnInit {
     AppRoutes.LOGIN_PAGE_ROUTE,
     AppRoutes.REGISTRATION_PAGE_ROUTE,
     AppRoutes.FORGOT_PASSWORD_PAGE_ROUTE,
+    AppRoutes.NEW_PASSWORD_PAGE_ROUTE,
+    AppRoutes.RESET_CODE_PAGE_ROUTE,
+    AppRoutes.SUCCESS_NEW_PASSWORD_PAGE_ROUTE,
   ];
 
   ngOnInit(): void {
